@@ -2,6 +2,7 @@
 public class Steven_Tester {
     public static void main (String[]args){
         
+        /* RealNumbers only tests
         System.out.println("----------Equals tests----------");
         RealNumber a = new RealNumber(0);
         RealNumber b = new RealNumber (0.00000000001);
@@ -17,6 +18,14 @@ public class Steven_Tester {
         System.out.println("3934 - 21. Expected 3913.0 | Output " + moo.subtract(boo));
         System.out.println("3934 * 21. Expected 82614.0 | Output " + moo.multiply(boo));
         System.out.println("3934 + 21. Expected 187.33333333333334 | Output " + moo.divide(boo));
+        */
 
+        RationalNumber a = new RationalNumber(3, -5);
+        RationalNumber b = new RationalNumber(-6, -10);
+        //RationalNumber c = new RationalNumber(394839, 0);
+        System.out.println(a.toString());
+        System.out.println(b.toString());
+        //System.out.println(c.toString());
+        System.out.println(RationalNumber.gcd(5,85));
     }
 }
