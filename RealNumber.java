@@ -42,5 +42,5 @@ public class RealNumber{
         return new RealNumber(this.getValue() / other.getValue());
     }
 
-
+    
 }
