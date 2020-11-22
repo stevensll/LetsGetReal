@@ -6,9 +6,16 @@ public class RationalNumber extends RealNumber{
         numerator = nume;
         denominator = deno;
         if (deno == 0) {numerator = 0; denominator = 1;}
-        if (nume > 0 && deno < 0){numerator *= -1; denominator *= -1;}
-        if (nume < 0 && deno < 0){numerator *= -1; denominator *=-1;}
-        reduce();
+        else if (nume > 0 && deno < 0){
+            numerator *= -1; 
+            denominator *= -1;
+            reduce();
+        }
+        else if (nume < 0 && deno < 0){
+            numerator *= -1; 
+            denominator *=-1;
+            reduce();
+        }
     }
 
     public static int gcd(int a, int b){

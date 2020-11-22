@@ -22,10 +22,10 @@ public class Steven_Tester {
 
         RationalNumber a = new RationalNumber(3, -5);
         RationalNumber b = new RationalNumber(-6, -10);
-        //RationalNumber c = new RationalNumber(394839, 0);
+        RationalNumber c = new RationalNumber(394839, 0);
         System.out.println(a.toString());
         System.out.println(b.toString());
-        //System.out.println(c.toString());
+        System.out.println(c.toString());
         System.out.println(RationalNumber.gcd(5,85));
     }
 }
