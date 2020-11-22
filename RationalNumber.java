@@ -2,7 +2,7 @@ public class RationalNumber extends RealNumber{
     private int numerator, denominator;
 
     public RationalNumber(int nume, int deno){
-        super(0.0);
+        super((double) nume/deno);
         numerator = nume;
         denominator = deno;
         if (deno == 0) {
@@ -43,8 +43,9 @@ public class RationalNumber extends RealNumber{
     }
 
     public double getValue(){
-        return numerator/denominator;
+        return numerator / denominator;
     }
+    
     public int getNumerator(){
         return numerator;
     }
@@ -63,6 +64,32 @@ public class RationalNumber extends RealNumber{
 
     public String toString(){
         return numerator+"/"+denominator;
+    }
+
+    public RationalNumber reciprocal(){
+        return new RationalNumber(this.getDenominator(), this.getNumerator());
+    }
+
+    public RationalNumber multiply(RationalNumber other){
+        return new RationalNumber(this.getNumerator()*other.getNumerator(),this.getDenominator()*other.getDenominator());
+    }
+
+    public RationalNumber divide(RationalNumber other){
+        return this.multiply(other.reciprocal());
+    }
+
+    public RationalNumber add(RationalNumber other){
+        int d = (this.getDenominator() * other.getDenominator());
+        int n1 = (this.getNumerator() * other.getDenominator());
+        int n2 = (other.getNumerator() * this.getDenominator());
+        return new RationalNumber(n1+n2,d);
+    }
+
+    public RationalNumber subtract(RationalNumber other){
+        int d = (this.getDenominator() * other.getDenominator());
+        int n1 = (this.getNumerator() * other.getDenominator());
+        int n2 = (other.getNumerator() * this.getDenominator());
+        return new RationalNumber(n1-n2,d);
     }
 
      
