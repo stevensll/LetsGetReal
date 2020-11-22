@@ -5,17 +5,19 @@ public class RationalNumber extends RealNumber{
         super(0.0);
         numerator = nume;
         denominator = deno;
-        if (deno == 0) {numerator = 0; denominator = 1;}
-        else if (nume > 0 && deno < 0){
+        if (deno == 0) {
+            numerator = 0; 
+            denominator = 1;
+        }
+        else if ((nume == 0)){
+            denominator = 1;
+        }
+        else if (denominator < 0) {
             numerator *= -1; 
             denominator *= -1;
             reduce();
         }
-        else if (nume < 0 && deno < 0){
-            numerator *= -1; 
-            denominator *=-1;
-            reduce();
-        }
+        else reduce();
     }
 
     public static int gcd(int a, int b){
@@ -41,15 +43,22 @@ public class RationalNumber extends RealNumber{
     }
 
     public double getValue(){
-        return 0.0;
+        return numerator/denominator;
     }
-
     public int getNumerator(){
         return numerator;
     }
 
     public int getDenominator(){
         return denominator;
+    }
+
+    //overrides RealNumber.equals()
+    public boolean equals(RationalNumber other) { 
+        return ( 
+            (this.getNumerator() == other.getNumerator()) && 
+            (this.getDenominator() == other.getDenominator()) 
+            );
     }
 
     public String toString(){
