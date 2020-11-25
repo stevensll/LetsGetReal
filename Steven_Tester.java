@@ -2,6 +2,19 @@
 public class Steven_Tester {
     public static void main (String[]args){
         
+        //Number Class Tests
+        System.out.println();
+        System.out.println("----------Number Class test----------");
+        RealNumber k = new RealNumber(.3333333333);
+        RationalNumber m = new RationalNumber(1,3);
+        System.out.println("Comparing .3333333333 to 1/3 using equals(). Expected true | Output " +k.equals(m));
+        System.out.println("Comparing .3333333333 to 1/3 using comparesTo(). Expected 0 | Output " + k.compareTo(m));
+        RealNumber woj = new RealNumber(.34);
+        RealNumber sham = new RealNumber(.32);
+        System.out.println("Comparing .34 to 1/3 using equals(). Expected + | Output "+woj.compareTo(m));
+        System.out.println("Comparing .32 to 1/3 using equals(). Expected - | Output "+sham.compareTo(m));
+        //
+
         //RealNumber only tests
         System.out.println();
         System.out.println("----------RealNumber only tests----------");
@@ -37,10 +50,10 @@ public class Steven_Tester {
         RationalNumber g = new RationalNumber(39, 156);
         System.out.println("Init : 3/-5. Expected -3/5 | Output " + a.toString());
         System.out.println("Init : -6/-10. Expected 3/5 | Output " + b.toString());
-        System.out.println("Init : 394839/0. Expected 0/1 | Output " + c.toString());
-        System.out.println("Init : 0/-35. Expected 0/1 | Output " + d.toString());
-        System.out.println("Init : 0/0. Expected 0/1 | Output " + e.toString());
-        System.out.println("Init : 100/100. Expected 1/1 | Output " + f.toString());
+        System.out.println("Init : 394839/0. Expected 0 | Output " + c.toString());
+        System.out.println("Init : 0/-35. Expected 0 | Output " + d.toString());
+        System.out.println("Init : 0/0. Expected 0 | Output " + e.toString());
+        System.out.println("Init : 100/100. Expected 1 | Output " + f.toString());
         System.out.println("Init : 39/156. Expected 1/4 | Output " + g.toString());
         System.out.println();
 
@@ -51,12 +64,12 @@ public class Steven_Tester {
         System.out.println();
 
         System.out.println("----------Reciprocal/Multiplication/Division tests----------");
-        System.out.println("Reciprocal of -10/-20. Expected 2/1 | Output " + moo.reciprocal());
+        System.out.println("Reciprocal of -10/-20. Expected 2 | Output " + moo.reciprocal());
         System.out.println("-10/-20 * 40/80. Expected 1/4 | Output " + moo.multiply(boo));
         RationalNumber zoo = new RationalNumber(40, 240);
-        System.out.println("-10/-20 / 40/240. Expected 3/1 | Output " + moo.divide(zoo));
+        System.out.println("-10/-20 / 40/240. Expected 3 | Output " + moo.divide(zoo));
         RationalNumber goo = new RationalNumber(1, 0);
-        System.out.println("40/240 / 1/0. Expected 0/1 | Output " + zoo.divide(goo));
+        System.out.println("40/240 / 1/0. Expected 0 | Output " + zoo.divide(goo));
         System.out.println();
 
         System.out.println("----------Addition/Subtraction tests----------");
@@ -69,7 +82,9 @@ public class Steven_Tester {
         System.out.println();
         //
 
-        // RationalNumber and RealNumber mix tests.
+
+        //11/24 These tests no longer work with incorporation of Number class.
+        /* RationalNumber and RealNumber mix tests.
         System.out.println("----------RealNumber comparsion to RationalNumber----------");
         RealNumber k = new RealNumber(.3333333333);
         RationalNumber m = new RationalNumber(1,3);
@@ -80,6 +95,6 @@ public class Steven_Tester {
         System.out.println("Subtracting 1.5 from 3/2. Expected 0.0 | Output " + woj.subtract(sham));
         System.out.println("Multiplying 1.5 and 3/2. Expected 2.25 | Output " + woj.multiply(sham));
         System.out.println("Dividing 1.5 by 3/2. Expected 1.0 | Output " + woj.divide(sham));
-        //
+        */
     }
 }

@@ -1,8 +1,7 @@
-public class RationalNumber extends RealNumber{
+public class RationalNumber extends Number{
     private int numerator, denominator;
 
     public RationalNumber(int nume, int deno){
-        super( ((double) nume) / deno);
         numerator = nume;
         denominator = deno;
         if (deno == 0) {
@@ -63,7 +62,9 @@ public class RationalNumber extends RealNumber{
     }
 
     public String toString(){
-        return numerator+"/"+denominator;
+        if(numerator == 0) return "0";
+        else if(denominator == 1) return numerator+"";
+        else return numerator+"/"+denominator;
     }
 
     public RationalNumber reciprocal(){
